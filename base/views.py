@@ -13,6 +13,9 @@ def signup(request):
         pass1 = request.POST.get("password")
         pass2 = request.POST.get("confirm_password")
 
+        if User.objects.filter(username=uname).exists():
+            return HttpResponse("Username already exists. Please choose a different username.")
+
         if pass1!=pass2:
             return HttpResponse("Password and confirm password doesn't match")
         
