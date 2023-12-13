@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <h2>Hello {{uname}}</h2>
+    {% for blog in blogs %}
+        <hr>
+        <div class="blog-post">
+            <center><h2>{{ blog.title }}</h2>
+            <p><i><u>Author:</u> {{ blog.author }}</i></p>
+            <p><i><u>Post Date:</u> {{ blog.created_at }}</i></p>
+            </center>
+            <p>{{ blog.content }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+    <a href="{% url 'compose' %}">Compose a new blog</a>
+    <br>
+    <a href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>

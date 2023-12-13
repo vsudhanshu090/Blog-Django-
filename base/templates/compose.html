@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose</title>
+</head>
+<body>
+    <h2>Write a new blog, {{uname}}</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <!-- Blog Post Title Input -->
+        <center>
+        <input type="text" style="width: 600px" id="title" name="title" required placeholder="Enter your blog title">
+        <br><br><br>
+        <!-- Blog Post Content Input -->
+        <textarea id="content" name="content" rows="20" cols="80" required placeholder="Enter your blog content"></textarea>
+
+        <!-- Submit Button -->
+        <br>
+        <button type="submit">Compose</button>
+        </center>
+    </form>
+
+</body>
+</html>
